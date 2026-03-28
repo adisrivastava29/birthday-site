@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Jagriti ❤️🎀</title>
+<title>Happy Birthday ❤️</title>
 
 <style>
 body {
@@ -52,6 +52,7 @@ button {
 
 <div class="card">
 
+<!-- AUDIO -->
 <audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
 
 <img src="./your-image.jpg">
@@ -74,11 +75,8 @@ From your senior
 </div>
 
 <script>
-  document.body.addEventListener("click", () => {
-  document.getElementById("bgMusic").play();
-}, { once: true });
 
-// SIMPLE TEXT (no + no errors)
+// TEXT
 const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
 
 Sach bolu toh ek time tha jab tum mere liye bahut important thi.
@@ -90,12 +88,12 @@ Par saath hi main genuinely khush hu ki tumne apni khushi choose ki.
 Bas itna kehna tha.
 Tum mere liye special thi, ho, aur rahogi.
 
-Happy Birthday to the most beautiful girl ❤️🎀
-I don’t know where I stand in your heart,
-but you’ll always have a place in mine.
+Happy Birthday ❤️
+You'll always have a place in my heart.
 
-From your Senior Aadi 🫶`;
+– Aadi`;
 
+// typing
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
@@ -105,11 +103,13 @@ function typeWriter() {
   }
 }
 
+// button click = message + music
 function showMessage() {
   document.getElementById("secretMsg").style.display = "block";
   document.getElementById("bgMusic").play();
 }
 
+// start typing
 typeWriter();
 
 </script>
