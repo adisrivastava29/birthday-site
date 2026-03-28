@@ -8,13 +8,13 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #fff;
+  color: white;
   text-align: center;
 }
 
@@ -23,23 +23,12 @@ body {
   padding: 25px;
   border-radius: 20px;
   max-width: 420px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 img {
   width: 100%;
   border-radius: 15px;
   margin-bottom: 15px;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  white-space: pre-line;
 }
 
 button {
@@ -49,26 +38,12 @@ button {
   border-radius: 10px;
   background: #ff4d6d;
   color: white;
-  font-size: 1rem;
   cursor: pointer;
 }
 
 .hidden-message {
   display: none;
   margin-top: 15px;
-  font-style: italic;
-}
-
-.heart {
-  position: fixed;
-  color: rgba(255,255,255,0.7);
-  animation: float 6s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
 }
 </style>
 </head>
@@ -77,10 +52,9 @@ button {
 
 <div class="card">
 
-<!-- 🎵 Music -->
-<audio id="bgMusic" src="music.mp3" loop controls style="width:100%; margin-bottom:10px;"></audio>
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
-<img src="./your-image.jpg" alt="Jagriti">
+<img src="./your-image.jpg">
 
 <h1>Happy Birthday Jagriti ❤️🎀</h1>
 
@@ -93,7 +67,7 @@ Na jaane kyu kuch log zindagi se door hoke bhi,
 Dil ke sabse kareeb reh jaate hain…
 Shayad tum unhi mein se ek ho.. ❤️
 
-Have a beautiful day ✨  
+Have a beautiful day ✨
 From your senior
 </p>
 
@@ -101,20 +75,25 @@ From your senior
 
 <script>
 
-// typing text
-const text = "I hope tum theek ho aur life tumhe khush rakh rahi hai.\n\n" +
-"Sach bolu toh ek time tha jab tum mere liye bahut important thi…\n" +
-"aur shayad kahin na kahin woh feeling hamesha rahegi.\n\n" +
-"Jo bhi hua humare beech, uska thoda afsos toh hai…\n" +
-"Par saath hi main genuinely khush hu ki tumne apni khushi choose ki.\n\n" +
-"Bas itna kehna tha…\n" +
-"Tum mere liye special thi, ho, aur rahogi.\n\n" +
-"Happy Birthday to the most beautiful girl ❤️🎀\n" +
-"I don’t know where I stand in your heart,\n" +
-"but you’ll always have a place in mine.\n\n" +
-"From your Senior Aadi 🫶";
-let i = 0;
+// SIMPLE TEXT (no + no errors)
+const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
 
+Sach bolu toh ek time tha jab tum mere liye bahut important thi.
+aur shayad kahin na kahin woh feeling hamesha rahegi.
+
+Jo bhi hua humare beech, uska thoda afsos toh hai.
+Par saath hi main genuinely khush hu ki tumne apni khushi choose ki.
+
+Bas itna kehna tha.
+Tum mere liye special thi, ho, aur rahogi.
+
+Happy Birthday to the most beautiful girl ❤️🎀
+I don’t know where I stand in your heart,
+but you’ll always have a place in mine.
+
+From your Senior Aadi 🫶`;
+
+let i = 0;
 function typeWriter() {
   if (i < text.length) {
     document.getElementById("typedText").innerHTML += text.charAt(i);
@@ -123,29 +102,12 @@ function typeWriter() {
   }
 }
 
-window.onload = typeWriter;
-
-// button click
 function showMessage() {
   document.getElementById("secretMsg").style.display = "block";
-
-  let audio = document.getElementById("bgMusic");
-  audio.play();
+  document.getElementById("bgMusic").play();
 }
 
-// floating hearts ❤️
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 6000);
-}, 500);
+typeWriter();
 
 </script>
 
