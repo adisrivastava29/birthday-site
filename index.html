@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday Jagriti ❤️🎀</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   display: flex;
   justify-content: center;
@@ -16,16 +16,13 @@ body {
   min-height: 100vh;
   color: white;
   text-align: center;
-  overflow: hidden;
 }
 
 .card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.35);
   padding: 25px;
   border-radius: 20px;
   max-width: 420px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 img {
@@ -34,48 +31,19 @@ img {
   margin-bottom: 15px;
 }
 
-h1 {
-  font-size: 28px;
-}
-
 button {
   margin-top: 20px;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 30px;
+  border-radius: 10px;
   background: #ff4d6d;
   color: white;
-  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #ff1e4d;
-  transform: scale(1.05);
 }
 
 .hidden-message {
   display: none;
   margin-top: 15px;
-  animation: fadeIn 1s ease;
-}
-
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-.heart {
-  position: fixed;
-  bottom: -20px;
-  font-size: 20px;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-100vh); opacity: 0; }
 }
 </style>
 </head>
@@ -92,7 +60,7 @@ button:hover {
 
 <p id="typedText"></p>
 
-<button onclick="showMessage()">Tap for Last Message 💌</button>
+<button onclick="showMessage()">Last Message 💌</button>
 
 <p class="hidden-message" id="secretMsg">
 Na jaane kyu kuch log zindagi se door hoke bhi,
@@ -107,7 +75,7 @@ From your senior
 
 <script>
 
-// 💌 MESSAGE
+// SIMPLE TEXT (no + no errors)
 const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
 
 Sach bolu toh ek time tha jab tum mere liye bahut important thi.
@@ -119,42 +87,26 @@ Par saath hi main genuinely khush hu ki tumne apni khushi choose ki.
 Bas itna kehna tha.
 Tum mere liye special thi, ho, aur rahogi.
 
-Happy Birthday ❤️
-You'll always have a place in my heart.
+Happy Birthday to the most beautiful girl ❤️🎀
+I don’t know where I stand in your heart,
+but you’ll always have a place in mine.
 
-– Aadi`;
+From your Senior Aadi 🫶`;
 
-// ✍️ typing effect
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
     document.getElementById("typedText").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeWriter, 25);
+    setTimeout(typeWriter, 30);
   }
 }
 
-// 💌 button click
 function showMessage() {
   document.getElementById("secretMsg").style.display = "block";
   document.getElementById("bgMusic").play();
 }
 
-// 💖 floating hearts
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 5000);
-}, 500);
-
-// 🚀 start
 typeWriter();
 
 </script>
