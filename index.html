@@ -78,11 +78,11 @@ button {
 
   </style>
 </head>
-<body>  <!-- Background Music -->  <audio autoplay loop>
+<body>  <!-- Background Music -->  <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>  <div class="card">
     <img src="./your-image.jpg" alt="Jagriti">
-    <h1>Happy Birthday Jagriti 🎂✨</h1><p id="typedText"></p>
+    <h1>Happy Birthday Jagriti❤️🎀</h1><p id="typedText"></p>
 
 <button onclick="showMessage()">Last Message 💌</button>
 
@@ -122,19 +122,22 @@ From Your Senior Aadi🫶.;
 
     window.onload = typeWriter;
 
-    function showMessage() {
-      document.getElementById("secretMsg").style.display = "block";
-    }
+  function showMessage() {
+  document.getElementById("secretMsg").style.display = "block";
 
-    // Floating hearts
-    setInterval(() => {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }, 500);
+  let audio = document.getElementById("bgMusic");
+  audio.play();
+}
+
+// Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 500);
   </script></body>
 </html>
