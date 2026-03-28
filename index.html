@@ -1,29 +1,29 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jagriti❤️🎂</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      overflow: auto;
-    }.card {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Jagriti ❤️🎀</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.card {
   background: rgba(0,0,0,0.35);
   padding: 25px;
   border-radius: 20px;
-  backdrop-filter: blur(12px);
   max-width: 420px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  animation: fadeIn 1.5s ease;
 }
 
 img {
@@ -32,13 +32,14 @@ img {
   margin-bottom: 15px;
 }
 
-h1 { font-size: 2rem; }
+h1 {
+  font-size: 2rem;
+}
 
 p {
   font-size: 1rem;
   line-height: 1.6;
   white-space: pre-line;
-  min-height: 200px;
 }
 
 button {
@@ -56,12 +57,11 @@ button {
   display: none;
   margin-top: 15px;
   font-style: italic;
-  animation: fadeIn 2s ease;
 }
 
 .heart {
-  position: absolute;
-  color: rgba(255,255,255,0.5);
+  position: fixed;
+  color: rgba(255,255,255,0.7);
   animation: float 6s linear infinite;
 }
 
@@ -70,66 +70,70 @@ button {
   50% { opacity: 1; }
   100% { transform: translateY(-10vh) scale(1); opacity: 0; }
 }
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);} 
-  to {opacity: 1; transform: translateY(0);} 
-}
-
-  </style>
+</style>
 </head>
-<body>  <!-- Background Music -->  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>  <div class="card">
-    <img src="./your-image.jpg" alt="Jagriti">
-    <h1>Happy Birthday Jagriti❤️🎀</h1><p id="typedText"></p>
+
+<body>
+
+<div class="card">
+
+<!-- 🎵 Music -->
+<audio id="bgMusic" src="music.mp3" loop controls style="width:100%; margin-bottom:10px;"></audio>
+
+<img src="./your-image.jpg" alt="Jagriti">
+
+<h1>Happy Birthday Jagriti ❤️🎀</h1>
+
+<p id="typedText"></p>
 
 <button onclick="showMessage()">Last Message 💌</button>
 
 <p class="hidden-message" id="secretMsg">
-  “Na jaane kyu kuch log zindagi se door hoke bhi,
-  Dil ke sabse kareeb reh jaate hain…
-  Shayad tum unhi mein se ek ho.” ❤️
+Na jaane kyu kuch log zindagi se door hoke bhi,
+Dil ke sabse kareeb reh jaate hain…
+Shayad tum unhi mein se ek ho.. ❤️
 
-  Have a beautiful day ✨
-  From your senior
+Have a beautiful day ✨  
+From your senior
 </p>
 
-  </div>  <script>
-    const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
-Sach bolu toh ek time tha jab tum mere liye bahut important thi… aur shayad kahin na kahin woh feeling hamesha rahegi.
+</div>
 
-Jo bhi hua humare beech, uska thoda afsos toh hai…
-par saath hi main genuinely khush hu ki tumne apni khushi choose ki.
-Aur sach me, tum khush raho… bas wahi matter karta hai.
+<script>
 
-Aur dil se chahta hu ki tumhe bhi life me sab kuch mile jo tum deserve karti ho.
+// typing text
+const text = "I hope tum theek ho aur life tumhe khush rakh rahi hai.\n\n" +
+"Sach bolu toh ek time tha jab tum mere liye bahut important thi…\n" +
+"aur shayad kahin na kahin woh feeling hamesha rahegi.\n\n" +
+"Jo bhi hua humare beech, uska thoda afsos toh hai…\n" +
+"Par saath hi main genuinely khush hu ki tumne apni khushi choose ki.\n\n" +
+"Bas itna kehna tha…\n" +
+"Tum mere liye special thi, ho, aur rahogi.\n\n" +
+"Happy Birthday to the most beautiful girl ❤️🎀\n" +
+"I don’t know where I stand in your heart,\n" +
+"but you’ll always have a place in mine.\n\n" +
+"From your Senior Aadi 🫶";
+let i = 0;
 
-Bas itna kehna tha… tum mere liye special thi, ho, aur kahin na kahin rahogi.
-Par ab shayad kuch kehne ka haq bacha nahi hai… par khair,
-Happy Birthday to the most beautiful girl in this world I've ever seen you r best bestest❤️🎀
-I don’t know where I stand in your heart, but you’ll always have a place in mine.
-From Your Senior Aadi🫶.;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typedText").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 30);
+  }
+}
 
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typedText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 30);
-      }
-    }
+window.onload = typeWriter;
 
-    window.onload = typeWriter;
-
-  function showMessage() {
+// button click
+function showMessage() {
   document.getElementById("secretMsg").style.display = "block";
 
   let audio = document.getElementById("bgMusic");
   audio.play();
 }
 
-// Floating hearts
+// floating hearts ❤️
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
@@ -137,7 +141,13 @@ setInterval(() => {
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (Math.random() * 20 + 10) + "px";
   document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 6000);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
 }, 500);
-  </script></body>
+
+</script>
+
+</body>
 </html>
