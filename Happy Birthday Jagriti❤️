@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Jagriti 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }.card {
+  background: rgba(0,0,0,0.35);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+h1 { font-size: 2rem; }
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  min-height: 200px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hidden-message {
+  display: none;
+  margin-top: 15px;
+  font-style: italic;
+  animation: fadeIn 2s ease;
+}
+
+.heart {
+  position: absolute;
+  color: rgba(255,255,255,0.5);
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);} 
+  to {opacity: 1; transform: translateY(0);} 
+}
+
+  </style>
+</head>
+<body>  <!-- Background Music -->  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>  <div class="card">
+    <img src="your-image.jpg" alt="Jagriti">
+    <h1>Happy Birthday Jagriti 🎂✨</h1><p id="typedText"></p>
+
+<button onclick="showMessage()">Last Message 💌</button>
+
+<p class="hidden-message" id="secretMsg">
+  “Na jaane kyu kuch log zindagi se door hoke bhi,
+  Dil ke sabse kareeb reh jaate hain…
+  Shayad tum unhi mein se ek ho.” ❤️
+
+  Have a beautiful day ✨
+  From your senior
+</p>
+
+  </div>  <script>
+    const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
+Sach bolu toh ek time tha jab tum mere liye bahut important thi… aur shayad kahin na kahin woh feeling hamesha rahegi.
+
+Jo bhi hua humare beech, uska thoda afsos toh hai…
+par saath hi main genuinely khush hu ki tumne apni khushi choose ki.
+Aur sach me, tum khush raho… bas wahi matter karta hai.
+
+Main bhi ab life me aage badh raha hu, aur achha hu.
+Aur dil se chahta hu ki tumhe bhi life me sab kuch mile jo tum deserve karti ho.
+
+Bas itna kehna tha… tum mere liye special thi, ho, aur kahin na kahin rahogi.
+Par ab shayad kuch kehne ka haq bacha nahi hai… par khair.`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 30);
+      }
+    }
+
+    window.onload = typeWriter;
+
+    function showMessage() {
+      document.getElementById("secretMsg").style.display = "block";
+    }
+
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 500);
+  </script></body>
+</html>
