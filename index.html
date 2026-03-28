@@ -52,7 +52,7 @@ button {
 
 <div class="card">
 
-<audio id="bgMusic" src="music.mp3" loop></audio>
+<audio id="bgMusic" src="music.mp3" loop preload="auto"></audio>
 
 <img src="./your-image.jpg">
 
@@ -74,6 +74,9 @@ From your senior
 </div>
 
 <script>
+  document.body.addEventListener("click", () => {
+  document.getElementById("bgMusic").play();
+}, { once: true });
 
 // SIMPLE TEXT (no + no errors)
 const text = `I hope tum theek ho aur life tumhe khush rakh rahi hai.
